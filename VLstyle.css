@@ -1,0 +1,266 @@
+body {
+	background-color:#FF8C00;
+	font-family: 'Comfortaa', cursive;
+}
+
+img {
+	max-width:200px;
+	max-height:300px;
+}
+
+label {
+    cursor:pointer;
+}
+
+#Opts {
+	width:200px;
+	height:200px;
+	margin:0 auto;
+	margin-top:50px;
+
+}
+
+#title_index {
+	width:350px;
+	margin:auto;
+	padding:30px 30px;
+	text-align:center;
+	background-color:#F0E68C;
+	border-radius:20px;
+	border:solid 5px #FFBF00;
+	font-size:20px;
+	font-weight:bold;
+	color:#FF8C00;
+	font-family: 'Comfortaa', cursive;
+	text-shadow: 3px 2px 3px #202020;
+}
+
+#title_invisible {
+	width:auto;
+	margin:auto;
+	text-align:center;
+}
+
+#title {
+	width:auto;
+	margin:auto;
+	padding:56px 50px;
+	text-align:center;
+	background-color:#F0E68C;
+	border-radius:20px;
+	border:solid 5px #FFBF00;
+	font-size:40px;
+	float:top;
+	font-weight:bold;
+	color:#FF8C00;
+	font-family: 'Comfortaa', cursive;
+	text-shadow: 3px 2px 3px #202020;
+}
+
+#formulaire {
+    margin: 0 auto;
+    background-color: #F0e68c;
+    border: solid 5px #FFBF00;
+    border-radius: 20px;
+    padding: 20px;
+    width: 800px;
+    height: 100%;
+}
+
+.list {
+	height:400px;
+	width:950px;
+	margin:0 auto;
+	text-align:center;
+	background-color:#F0E68C;
+	border-radius:10px;
+	border:solid 5px #FFBF00;
+	font-size:20px;
+	overflow:auto;
+	line-height: 300%;
+}
+
+.lien {
+	background-color:#F0E68C;
+	padding:10px 10px;
+	width:200px;
+	height:70px;
+	text-align:center;
+	border-radius:20px;
+	border:solid 5px #FFBF00;
+	font-family: 'Comfortaa', cursive;
+	font-size:20px;
+	margin:100px 30px;
+	font-weight:bold;
+	color:#FF8C00;
+	text-shadow:1px 2px 2px #202020;
+	box-shadow:1px 2px 2px #202020;
+}
+
+.lien:hover {
+	background-color:#FFBF00;
+	color:white;
+	box-shadow:1px 2px 10px #202020;
+}
+
+.search {
+	padding:30px 30px;
+	margin:0 auto;
+	text-align:center;
+}
+
+.profil_recherche {
+	float:left;
+	position: absolute;
+}
+
+.flex {
+	height:420px;
+	width:945px;
+	margin:auto;
+	text-align:center;
+	background-color:#F0E68C;
+	border-radius:25px;
+	border:solid 5px #FFBF00;
+	font-size:20px;
+}
+
+.info {
+	margin:auto;
+	height:358px;
+	width:200px;
+	padding: 30px 30px;
+	text-align:center;
+	background-color:#F0E68C;
+	border-radius:20px;
+	border:solid 2.5px #FFBF00;
+	font-size:20px;
+	float:left;
+}
+
+.mini_ls {
+	width:110%;
+	height:300px;;
+	font-size:20px;
+	overflow:auto;
+	line-height: 200%;
+}
+
+.espace {
+
+}
+
+.profil {
+	margin:auto;
+	width:350px;
+	height:355px;
+	padding:32px 30px;
+	text-align:center;
+	background-color:#F0E68C;
+	border-radius:20px;
+	border:solid 2.5px #FFBF00;
+	font-size:20px;
+	float:left;
+}
+
+.cont {
+	margin:auto;
+	height:400px;
+	width:950px;
+	text-align:center;
+	background-color:#F0E68C;
+	border-radius:30px;
+	border:solid 5px #FFBF00;
+	font-size:20px;
+}
+
+.contacts {
+	float:top;
+}
+
+.ls_ct {
+	width:98%;
+	height:300px;
+	margin:auto;
+	text-align:center;
+	font-size:20px;
+	overflow:auto;
+	line-height: 275%;
+}
+
+form .inquiry {
+    width: 500px;
+    margin: 30px;
+    text-align: left;
+}
+
+input#firstname, #lastname, #profile-pic {
+    border:none;
+    width: 700px;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Comfortaa', cursive;
+}
+
+/* Masquer le bouton radio d'origine */
+
+input[type="radio"] {
+    display: none;
+}
+
+/* Affichage par défaut bouton d'origine personnalisé */
+
+input[type="radio"] + label:before {
+    background: #fff;
+    border: 2px solid #FF8000;
+    border-radius: 50%;
+    margin-top: -3px;
+    margin-right: 6px;
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+    width: 17px;
+    height: 17px;
+}
+
+/* Affichage du bouton radio personnalisé quand il est sélectionné */
+
+input[type="radio"]:checked + label:before {
+    background: #fb8819;
+    border-color: #fb8819;
+    box-shadow: inset 0px 0px 0px 2px #fff;
+}
+
+/* Masquer le bouton checkbox d'origine */
+
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Affichage par défaut bouton d'origine personnalisé */
+
+input[type="checkbox"] + label:before {
+    background: #fff;
+    border: 2px solid #FF8000;
+    margin-top: -3px;
+    margin-right: 6px;
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+    width: 17px;
+    height: 17px;
+}
+
+/* Affichage du bouton radio personnalisé quand il est sélectionné */
+
+input[type="checkbox"]:checked + label:before {
+    background: #fb8819;
+    border-color: #fb8819;
+    box-shadow: inset 0px 0px 0px 2px #fff;
+}
+
+label {
+    cursor:pointer;
+}
+
+
