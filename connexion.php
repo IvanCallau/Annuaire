@@ -105,6 +105,15 @@ class Connexion {
 			return null;
 		}
 	}
+
+	// Fonction insertPersonneMusique
+	public function insertPersonneMusique($p_id, $m_id) {
+		$requete_prepare = $this->connexion->prepare(
+			"INSERT INTO RelationMusique (Personne_ID, Musique_ID) VALUES (:p_id, :m_id)");
+		
+		$requete_prepare->execute(
+			array ( 'p_id' => $p_id, 'm_id' => $m_id));
+	}
 /*
 	public function insertPersonneHobbies($personneId, $hobbies) {
 
