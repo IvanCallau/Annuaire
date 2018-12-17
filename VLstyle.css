@@ -263,4 +263,8 @@ label {
     cursor:pointer;
 }
 
+input#hobbies, input#musics {
+	display: inline-block;
+}
+
 
