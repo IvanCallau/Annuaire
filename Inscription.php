@@ -4,7 +4,13 @@ require "connexion.php";
 
 $appliBD = new Connexion();
 
+<<<<<<< HEAD
 $newUser->$appliBD->selectPersonneById($id);
+=======
+$id = $_GET["id"];
+
+$newUser = $appliBD->selectPersonneById($id);
+>>>>>>> fac70acfd54410fddb3d49776fba4e005a783bdd
 
 $lastname = $_POST["lastname"];
 $firstname =  $_POST["firstname"];

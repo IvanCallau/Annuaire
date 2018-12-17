@@ -36,15 +36,9 @@ class Connexion {
 
 		try {
 
-			// Je me connecte à la base de données.
-			// $connexion = connexionBD();
-
-			// On prépare notre requête.
 			$requete_prepare = $this->connexion->prepare(
 				"INSERT INTO Hobby (Type) values (:hobby)");
 
-			// On exécute la requête en remplacant
-			// :hobby par la valeur de $hobby.
 			$requete_prepare->execute(
 				array('hobby' => $hobby));
 		}
@@ -63,16 +57,11 @@ class Connexion {
 	public function insertMusique($style) {
 
 		try {
-
-			// Je me connecte à la base de données.
-			// $connexion = connexionBD();
-
 			// On prépare notre requête.
 			$requete_prepare = $this->connexion->prepare(
 				"INSERT INTO Musique (Type) values (:musique)");
 
-			// On exécute la requête en remplacant
-			// :musique par la valeur de $style.
+			// On exécute la requête en remplacant :musique par la valeur de $style.
 			$requete_prepare->execute(
 				array('musique' => $style));
 		}
