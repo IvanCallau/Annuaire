@@ -113,7 +113,7 @@ $hobbies = $appliBD->selectAllHobbies2();
 
         foreach ($hobbies as $hobby) {
 
-          echo "<input id='checkbox" . "$iH+1' type='checkbox' name='hobbies[]'><label for='checkbox" . "$iH+1'>" . $hobby->Type . "</label><br><br>";
+          echo "<input id='checkbox" . "$iH+1' type='checkbox' name='hobbies[]' value=" . $hobby->ID . "><label for='checkbox" . "$iH+1'>" . $hobby->Type . "</label><br><br>";
 
           $iH++;
 

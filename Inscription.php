@@ -9,6 +9,10 @@ $firstname =  $_POST["firstname"];
 $photo = $_POST["photo_URL"];
 $anniversaire = $_POST["anniversaire"];
 $status = $_POST["status"];
+$hobbies = $_POST["hobbies"];
+$musiques = $_POST["musiques"];
+$contacts = $_POST["contacts"];
+
 
 echo "$lastname </br> $firstname </br> $photo </br> $anniversaire </br> $status";
 
