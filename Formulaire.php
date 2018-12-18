@@ -82,7 +82,7 @@ $hobbies = $appliBD->selectAllHobbies2();
 
       <div class="inquiry">
         Photo de profil:
-        <input id="profile-pic" type="url" name="photo_URL" value="default.jpg" placeholder="URL de l'image">
+        <input id="profile-pic" type="url" name="photo_URL" placeholder="URL de l'image">
       </div>
 
       <div id="music">
