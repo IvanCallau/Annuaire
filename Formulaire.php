@@ -85,7 +85,7 @@ $hobbies = $appliBD->selectAllHobbies2();
         <input id="profile-pic" type="url" name="photo_URL" placeholder="URL de l'image">
       </div>
 
-      <div id="music">
+      <div id="musics">
         <h2>Musique:</h2>
 
         <?php
@@ -94,7 +94,7 @@ $hobbies = $appliBD->selectAllHobbies2();
 
         foreach ($musiques as $m) {
 
-          echo "<input id='checkbox" . "$iM+1' type='checkbox' name='musiques[]' value=" . $m->ID . "><label for='checkbox" . "$iM+1'>" . $m->Type . "</label>";
+          echo "<input id='checkbox" . "$iM+1' type='checkbox' name='musiques[]' value=" . $m->ID . "><label for='checkbox" . "$iM+1'>" . $m->Type . "</label><br><br>";
 
           $iM++;
 
@@ -113,7 +113,7 @@ $hobbies = $appliBD->selectAllHobbies2();
 
         foreach ($hobbies as $hobby) {
 
-          echo "<input id='checkbox" . "$iH+1' type='checkbox' name='hobbies[]'><label for='checkbox" . "$iH+1'>" . $hobby->Type . "</label>";
+          echo "<input id='checkbox" . "$iH+1' type='checkbox' name='hobbies[]'><label for='checkbox" . "$iH+1'>" . $hobby->Type . "</label><br><br>";
 
           $iH++;
 

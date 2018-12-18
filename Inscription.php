@@ -1,7 +1,5 @@
 <?php
 
-
-
 require "connexion.php";
 
 $appliBD = new Connexion();
@@ -12,11 +10,9 @@ $photo = $_POST["photo_URL"];
 $anniversaire = $_POST["anniversaire"];
 $status = $_POST["status"];
 
-
 echo "$lastname </br> $firstname </br> $photo </br> $anniversaire </br> $status";
 
 $nouvelId = $appliBD->insertPersonne($lastname, $firstname, $photo, $anniversaire, $status);
-
 
 header("Location: /Annuaire/Profil.php?id=$nouvelId", true, 303);
 
