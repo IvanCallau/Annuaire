@@ -6,6 +6,7 @@ $appliBD = new Connexion();
 
 $musiques = $appliBD->selectAllMusique2();
 $hobbies = $appliBD->selectAllHobbies2();
+$personnes = $appliBD->selectAllPersonnes();
 
 ?>
 
@@ -62,7 +63,7 @@ $hobbies = $appliBD->selectAllHobbies2();
  
       <div class="inquiry">
         Date de naissance:
-        <input type="date" name="anniversaire">
+        <input type="date" name="anniversaire" required>
       </div>
 
       <div class="inquiry">
@@ -82,7 +83,7 @@ $hobbies = $appliBD->selectAllHobbies2();
 
       <div class="inquiry">
         Photo de profil:
-        <input id="profile-pic" type="url" name="photo_URL" placeholder="URL de l'image">
+        <input id="profile-pic" type="url" name="photo_URL" placeholder="URL de l'image" required>
       </div>
 
       <div id="musics">
@@ -91,15 +92,23 @@ $hobbies = $appliBD->selectAllHobbies2();
         <?php
 
         $iM = 0;
+/*
+        function tableauMusique($taille, $colone) {
 
-        foreach ($musiques as $m) {
+          for($i = 0 ; $i < $taille ; $i++) {
 
-          echo "<input id='checkbox" . "$iM+1' type='checkbox' name='musiques[]' value=" . $m->ID . "><label for='checkbox" . "$iM+1'>" . $m->Type . "</label><br><br>";
+            for($j = 0 ; $j < $colone ; $j++) {
 
-          $iM++;
-
+              foreach ($musiques as $m) {
+                echo "<input id='checkbox" . "$iM+1' type='checkbox' name='musiques[]' value=" . $m->ID . "><label for='checkbox" . "$iM+1'>" . $m->Type . "</label><br><br>";
+                $iM++;
+              }
+            }
+          }
         }
 
+        tableauMusique()
+*/
         ?>
 
       </div>
@@ -130,57 +139,14 @@ $hobbies = $appliBD->selectAllHobbies2();
 
           $iC = 200;
 
-          echo "<td>";
-          echo "<input id='checkbox17' type='checkbox' name='contacts[]'>";
-          echo "<label for='checkbox17'>";
-          echo "Lorem";
-          echo "</label>";
-          echo "</td>";
-          echo "<td>";
-          echo "<input id='checkbox18' type='checkbox' name='contacts[]'>";
-          echo "<label for='checkbox18'>";
-          echo "Ipsum";
-          echo "</label>";
-          echo "</td>";
-          echo "<td>";
-          echo "<input id='checkbox19' type='checkbox' name='contacts[]'>";
-          echo "<label for='checkbox19'>";
-          echo "Dolor";
-          echo "</label>";
-          echo "</td>";
-          echo "<td>";
-          echo "<input id='checkbox20' type='checkbox' name='contacts[]'>";
-          echo "<label for='checkbox20'>";
-          echo "Sit";
-          echo "</label>";
-          echo "</td>";
-          echo "<td>";
-          echo "<input id='checkbox21' type='checkbox' name='contacts[]'>";
-          echo "<label for='checkbox21'>";
-          echo "Amet";
-          echo "</label>";
-          echo "</td>";
-          echo "<td>";
-          echo "<input id='checkbox22' type='checkbox' name='contacts[]'>";
-          echo "<label for='checkbox22'>";
-          echo "Consectetur";
-          echo "</label>";
-          echo "</td>";
-          echo "<td>";
-          echo "<input id='checkbox23' type='checkbox' name='contacts[]'>";
-          echo "<label for='checkbox23'>";
-          echo "Adipiscing";
-          echo "</label>";
-          echo "</td>";
-          echo "<td>";
-          echo "<input id='checkbox24' type='checkbox' name='contacts[]'>";
-          echo "<label for='checkbox24'>";
-          echo "Elit";
-          echo "</label>";
-          echo "</td>";
+          foreach ($personnes as $persone) {
 
-          $iC++;
+            echo "<input id='checkbox" . "$iC+1' type='checkbox' name='contacts[]' valeur=" . $persone->ID . "><label for='checkbox" . "$iC+1'>" . $persone->Prenom . " " . $persone->Nom . "<input id='relation' type='text' name='relation' required></label></br></br>";
 
+            $iC++;
+
+          }
+          
           ?>
           
         </div>

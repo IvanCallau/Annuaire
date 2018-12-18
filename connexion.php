@@ -159,20 +159,11 @@ class Connexion {
 
 	}
 */
-	public function selectAllHobbies() {
 
-		$requete_prepare = $this->connexion->prepare(
-			"SELECT Type FROM Hobby");
 
-		$requete_prepare->execute();
 
-		$resultat = $requete_prepare->fetchALL(PDO::FETCH_ASSOC);
+// SELECT * FROM (Table)
 
-		echo "Hobbies:";
-
-		return $resultat;
-	}
-	// Correction.
 	public function selectAllHobbies2() {
 
 		$requete_prepare = $this->connexion->prepare(
@@ -185,22 +176,6 @@ class Connexion {
 		return $resultat;
 	}
 
-
-
-	public function selectAllMusic() {
-
-		$requete_prepare = $this->connexion->prepare(
-			"SELECT Type FROM Musique");
-
-		$requete_prepare->execute();
-
-		$resultat = $requete_prepare->fetchALL(PDO::FETCH_ASSOC);
-
-		echo "Musiques:";
-
-		return $resultat;
-	}
-	// Correction.
 	public function selectAllMusique2() {
 
 		$requete_prepare = $this->connexion->prepare(
@@ -212,6 +187,20 @@ class Connexion {
 
 		return $resultat;
 	}
+
+	public function selectAllPersonnes() {
+
+		$requete_prepare = $this->connexion->prepare(
+			"SELECT * FROM Personne");
+
+		$requete_prepare->execute();
+
+		$resultat = $requete_prepare->fetchALL(PDO::FETCH_OBJ);
+
+		return $resultat;
+	}
+
+
 
 
 
