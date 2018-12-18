@@ -109,21 +109,36 @@ class Connexion {
 
 	// Fonction insertPersonneMusique
 	public function insertPersonneMusique($p_id, $m_id) {
+
 		$requete_prepare = $this->connexion->prepare(
 			"INSERT INTO RelationMusique (Personne_ID, Musique_ID) VALUES (:p_id, :m_id)");
 		
 		$requete_prepare->execute(
-			array ( 'p_id' => $p_id, 'm_id' => $m_id));
+			array ('p_id' => $p_id,
+				'm_id' => $m_id));
 	}
 
 
 	// Fonction insertPersonneHobby
 	public function insertPersonneHobby($p_id, $h_id) {
+
 		$requete_prepare = $this->connexion->prepare(
 			"INSERT INTO RelationHobby (Personne_Id, Hobby_Id) VALUES (:p_id, :h_id)");
 		
 		$requete_prepare->execute(
-			array ( 'p_id' => $p_id, 'h_id' => $h_id));
+			array ('p_id' => $p_id,
+				'h_id' => $h_id));
+	}
+
+	// Fonction insertRelationPersonne
+	public function insertRelationPersonne($p_id, $r_id) {
+
+		$requete_prepare = $this->connexion->prepare(
+			"INSERT INTO RelationPersonne (Personne_Id, Relation_Id) VALUES (:p_id, :r_id)");
+		
+		$requete_prepare->execute(
+			array ('p_id' => $p_id,
+				'r_id' => $r_id));
 	}
 
 
