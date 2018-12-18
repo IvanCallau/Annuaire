@@ -106,6 +106,7 @@ class Connexion {
 		}
 	}
 
+
 	// Fonction insertPersonneMusique
 	public function insertPersonneMusique($p_id, $m_id) {
 		$requete_prepare = $this->connexion->prepare(
@@ -114,6 +115,18 @@ class Connexion {
 		$requete_prepare->execute(
 			array ( 'p_id' => $p_id, 'm_id' => $m_id));
 	}
+
+
+	// Fonction insertPersonneHobby
+	public function insertPersonneHobby($p_id, $h_id) {
+		$requete_prepare = $this->connexion->prepare(
+			"INSERT INTO RelationHobby (Personne_Id, Hobby_Id) VALUES (:p_id, :h_id)");
+		
+		$requete_prepare->execute(
+			array ( 'p_id' => $p_id, 'h_id' => $h_id));
+	}
+
+
 /*
 	public function insertPersonneHobbies($personneId, $hobbies) {
 
@@ -140,10 +153,10 @@ class Connexion {
 		}
 	}
 
-	private function getHobbyId($hobby) {
+	private function getHobbyId($id) {
 
 		try {
-			$requete_prepare = $this->connexion->prepare("SELECT ID FROM Hobby WHERE Type = $hobby");
+			$requete_prepare = $this->connexion->prepare("SELECT ID FROM Hobby WHERE Type = $id");
 
 			$requete_prepare->execute();
 		}

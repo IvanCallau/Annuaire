@@ -141,7 +141,7 @@ $personnes = $appliBD->selectAllPersonnes();
 
           foreach ($personnes as $persone) {
 
-            echo "<input id='checkbox" . "$iC+1' type='checkbox' name='contacts[]' valeur=" . $persone->ID . "><label for='checkbox" . "$iC+1'>" . $persone->Prenom . " " . $persone->Nom . "<input id='relation' type='text' name='relation' required></label></br></br>";
+            echo "<input id='checkbox" . "$iC+1' type='checkbox' name='contacts[]' valeur=" . $persone->ID . "><label for='checkbox" . "$iC+1'>" . $persone->Prenom . " " . $persone->Nom . "</br><input id='relation' type='text' name='relation' required></br></label></br></br>";
 
             $iC++;
 
