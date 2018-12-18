@@ -100,8 +100,11 @@ $personnes = $appliBD->selectAllPersonnes();
           $iM++;
 
           if ($iM % 4 == 0) {
+
             echo "</br>";
+
           }
+
         }
           
         ?>
@@ -113,7 +116,7 @@ $personnes = $appliBD->selectAllPersonnes();
 
         <?php
 
-        $iH = 50;
+        $iH = 500;
 
         foreach ($hobbies as $hobby) {
 
@@ -132,7 +135,7 @@ $personnes = $appliBD->selectAllPersonnes();
 
           <?php
 
-          $iC = 200;
+          $iC = 2000;
 
           foreach ($personnes as $persone) {
 
