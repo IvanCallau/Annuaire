@@ -92,23 +92,18 @@ $personnes = $appliBD->selectAllPersonnes();
         <?php
 
         $iM = 0;
-/*
-        function tableauMusique($taille, $colone) {
 
-          for($i = 0 ; $i < $taille ; $i++) {
+        foreach ($musiques as $m) {
 
-            for($j = 0 ; $j < $colone ; $j++) {
+          echo "<input id='checkbox" . "$iM+1' type='checkbox' name='musiques[]' value=" . $m->ID . "><label for='checkbox" . "$iM+1'>" . $m->Type . "</label>&nbsp;";
 
-              foreach ($musiques as $m) {
-                echo "<input id='checkbox" . "$iM+1' type='checkbox' name='musiques[]' value=" . $m->ID . "><label for='checkbox" . "$iM+1'>" . $m->Type . "</label><br><br>";
-                $iM++;
-              }
-            }
+          $iM++;
+
+          if ($iM % 4 == 0) {
+            echo "</br>";
           }
         }
-
-        tableauMusique()
-*/
+          
         ?>
 
       </div>
@@ -141,7 +136,7 @@ $personnes = $appliBD->selectAllPersonnes();
 
           foreach ($personnes as $persone) {
 
-            echo "<input id='checkbox" . "$iC+1' type='checkbox' name='contacts[]' valeur=" . $persone->ID . "><label for='checkbox" . "$iC+1'>" . $persone->Prenom . " " . $persone->Nom . "</br><input id='relation' type='text' name='relation' required></br></label></br></br>";
+            echo "<input id='checkbox" . "$iC+1' type='checkbox' name='contacts[]' value=" . $persone->ID . " onclick=toggleRequired(" . $persone->ID . ")><label for='checkbox" . "$iC+1'>" . $persone->Prenom . " " . $persone->Nom . "</br><input id='relation" . $persone->ID . "' type='text' name=" . $persone->ID . "></br></label></br></br>";
 
             $iC++;
 
@@ -156,6 +151,21 @@ $personnes = $appliBD->selectAllPersonnes();
         </div>
     </form>
   </div>
+
+  <script type="text/javascript">
+    
+    function toggleRequired(personeId) {
+
+      var textInput = document.getElementById("relation"+personeId);
+
+      if (textInput.hasAttribute('required') !== true) {
+        textInput.setAttribute('required','required');
+      }
+      else {
+        textInput.removeAttribute('required');  
+      }
+    }
+  </script>
 
 </body>
 </html>
