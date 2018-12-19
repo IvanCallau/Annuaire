@@ -20,13 +20,19 @@ $nouvelId = $appliBD->insertPersonne($lastname, $firstname, $photo, $anniversair
 
 foreach ($musiques as $musique) {
 
-	$mesMusiques = $appliBD->insertPersonneMusique($nouveId, $musique);
+	$mesMusiques = $appliBD->insertPersonneMusique($nouvelId, $musique);
 
 }
 
 foreach ($hobbies as $hobby) {
 
 	$mesHobbies = $appliBD->insertPersonneHobby($nouvelId, $hobby);
+
+}
+
+foreach ($contacts as $persone) {
+
+	$mesRelations = $appliBD->insertRelationPersonne($nouvelId, $persone, $type);
 
 }
 
