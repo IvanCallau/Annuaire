@@ -95,16 +95,15 @@ $personnes = $appliBD->selectAllPersonnes();
 
         foreach ($musiques as $m) {
 
-          echo "<input id='checkbox" . "$iM+1' type='checkbox' name='musiques[]' value=" . $m->ID . "><label for='checkbox" . "$iM+1'>" . $m->Type . "</label>&nbsp;";
+          echo "<input id='checkbox" . "$iM+1' type='checkbox' name='musiques[]' value=" . $m->ID . "><label for='checkbox" . "$iM+1'>" . $m->Type . "</label>&nbsp;&nbsp;&nbsp;";
 
           $iM++;
 
           if ($iM % 4 == 0) {
 
-            echo "</br>";
+            echo "</br></br>";
 
           }
-
         }
           
         ?>
@@ -124,6 +123,11 @@ $personnes = $appliBD->selectAllPersonnes();
 
           $iH++;
 
+          if ($iM % 4 == 0) {
+
+            echo "</br></br>";
+
+          }
         }
 
         ?>
