@@ -99,7 +99,7 @@ $personnes = $appliBD->selectAllPersonnes();
 
           $iM++;
 
-          if ($iM % 4 == 0) {
+          if ($iM % 6 == 0) {
 
             echo "</br></br>";
 
@@ -119,11 +119,11 @@ $personnes = $appliBD->selectAllPersonnes();
 
         foreach ($hobbies as $hobby) {
 
-          echo "<input id='checkbox" . "$iH+1' type='checkbox' name='hobbies[]' value=" . $hobby->ID . "><label for='checkbox" . "$iH+1'>" . $hobby->Type . "</label><br><br>";
+          echo "<input id='checkbox" . "$iH+1' type='checkbox' name='hobbies[]' value=" . $hobby->ID . "><label for='checkbox" . "$iH+1'>" . $hobby->Type . "</label>&nbsp;&nbsp;&nbsp;";
 
           $iH++;
 
-          if ($iM % 4 == 0) {
+          if ($iH % 5 == 0) {
 
             echo "</br></br>";
 
