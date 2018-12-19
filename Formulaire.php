@@ -143,10 +143,15 @@ $personnes = $appliBD->selectAllPersonnes();
 
           foreach ($personnes as $persone) {
 
-            echo "<input id='checkbox" . "$iC+1' type='checkbox' name='contacts[]' value=" . $persone->ID . " onclick=toggleRequired(" . $persone->ID . ")><label for='checkbox" . "$iC+1'>" . $persone->Prenom . " " . $persone->Nom . "</br><input id='relation" . $persone->ID . "' type='text' name=" . $persone->ID . "></br></label></br></br>";
+            echo "<input id='checkbox" . "$iC+1' type='checkbox' name='contacts[]' value=" . $persone->ID . " onclick=toggleRequired(" . $persone->ID . ")><label for='checkbox" . "$iC+1'>" . $persone->Prenom . " " . $persone->Nom . "</br><input id='relation" . $persone->ID . "' type='text' name='typeRelation[".$persone->ID."]'></br></label></br></br>";
 
             $iC++;
 
+            if ($iH % 2 == 0) {
+
+              echo "</br></br>";
+
+            }
           }
           
           ?>

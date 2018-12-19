@@ -12,8 +12,9 @@ $status = $_POST["status"];
 $musiques = $_POST["musiques"];
 $hobbies = $_POST["hobbies"];
 $contacts = $_POST["contacts"];
+$relationType = $_POST["typeRelation"];
 
-
+var_dump($_POST);
 echo "$lastname </br> $firstname </br> $photo </br> $anniversaire </br> $status";
 
 $nouvelId = $appliBD->insertPersonne($lastname, $firstname, $photo, $anniversaire, $status);
@@ -30,10 +31,11 @@ foreach ($hobbies as $hobby) {
 
 }
 
-foreach ($contacts as $persone) {
+foreach ($relationType as $personeId => $personeRelation) {
 
-	$mesRelations = $appliBD->insertRelationPersonne($nouvelId, $persone, $type);
-
+	if ($personeRelation != "") {
+		$mesRelations = $appliBD->insertRelationPersonne($nouvelId, $personeId, $personeRelation);
+	}
 }
 
 header("Location: /Annuaire/Profil.php?id=$nouvelId", true, 303);
