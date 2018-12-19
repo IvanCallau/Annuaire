@@ -131,14 +131,15 @@ class Connexion {
 	}
 
 	// Fonction insertRelationPersonne
-	public function insertRelationPersonne($p_id, $r_id) {
+	public function insertRelationPersonne($p_id, $r_id, $type) {
 
 		$requete_prepare = $this->connexion->prepare(
-			"INSERT INTO RelationPersonne (Personne_Id, Relation_Id) VALUES (:p_id, :r_id)");
+			"INSERT INTO RelationPersonne (Personne_Id, Relation_Id, Type) VALUES (:p_id, :r_id, :type)");
 		
 		$requete_prepare->execute(
 			array ('p_id' => $p_id,
-				'r_id' => $r_id));
+				'r_id' => $r_id,
+				'type' => $type));
 	}
 
 
