@@ -243,10 +243,25 @@ label {
 	width:98%;
 	height:300px;
 	margin:auto;
-	text-align:center;
 	font-size:20px;
 	overflow:auto;
 	line-height: 275%;
+	padding-top: 10px;
+}
+
+.ls_ct a{
+	color: #FF8C00;
+	background-color: #F0E68C;
+	border: solid #FF8C00;
+	padding: 10px;
+	border-radius: 50px;
+	text-decoration: none;
+}
+
+.ls_ct a:hover {
+	background-color: #FFBF00;
+	color: white;
+	transition: 0.5s;
 }
 
 form .inquiry {

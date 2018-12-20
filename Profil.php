@@ -17,9 +17,9 @@ $relations = $appliBD->getRelationPersonne($id);
 <html lang="fr">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"/>
+  <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <title>VisageLibraire</title>
 
@@ -103,9 +103,19 @@ $relations = $appliBD->getRelationPersonne($id);
 		<div class="ls_ct">
 			<?php
 
+			$iP = 0;
+
 			foreach ($relations as $personne) {
 
-			echo "<a href='Profil.php?id=$personne->ID'>" . $personne->Prenom . " " . $personne->Nom . " " . $personne->Type ."</a>";
+				echo "<a href='Profil.php?id=$personne->ID'>" . $personne->Prenom . " " . $personne->Nom ."&nbsp;/&nbsp;" . $personne->Type ."</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+
+				$iP++;
+
+				if ($iP % 2 === 0) {
+
+					echo "</br></br>";
+
+				}
 
 			}
 
