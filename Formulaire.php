@@ -52,21 +52,22 @@ $personnes = $appliBD->selectAllPersonnes();
       </div>
 
       <div class="inquiry">
-        Nom:
+        <h3>Nom:</h3>
         <input id="lastname" type="text" name="lastname" required>
       </div>
 
       <div class="inquiry">
-        Prénom:
+        <h3>Prénom:</h3>
         <input id="firstname" type="text" name="firstname" required>
       </div>
  
       <div class="inquiry">
-        Date de naissance:
+        <h3>Date de naissance:</h3>
         <input type="date" name="anniversaire" required>
       </div>
 
       <div class="inquiry">
+        <h3>Status:</h3>
         <input id="bouton4" type="radio" name="status" value="En Couple">
         <label for="bouton4">
           En Couple
@@ -82,13 +83,13 @@ $personnes = $appliBD->selectAllPersonnes();
       </div>
 
       <div class="inquiry">
-        Photo de profil:
+        <h3>Photo de profil:</h3>
         <input id="profile-pic" type="url" name="photo_URL" placeholder="URL de l'image" required>
       </div>
 
-      <div id="musics">
-        <h2>Musique:</h2>
-        <p class="instructions">(Vous aimez un de ses musiques? Cocher sa case et soyez gêné par vos goût douteux.)</p></br>
+      <div class="choix">
+        <h3  class="insertions">Musique:</h3>
+        <p class="instructions">(Vous aimez une de ses musiques? Cocher sa case et soyez gêné par vos goût douteux.)</p></br>
 
         <?php
 
@@ -111,8 +112,8 @@ $personnes = $appliBD->selectAllPersonnes();
 
       </div>
 
-      <div id="hobbies">
-        <h2>Hobbies:</h2>
+      <div class="choix">
+        <h3  class="insertions">Hobbies:</h3>
         <p class="instructions">(Vous avez un de ses hobby? Cocher sa case et montrer les à tous.)</p></br>
 
         <?php
@@ -136,8 +137,8 @@ $personnes = $appliBD->selectAllPersonnes();
 
         </div>
 
-        <div id="other-contacts">
-          <h2>Connaissances:</h2>
+        <div class="choix">
+          <h3 class="insertions">Connaissances:</h3>
           <p class="instructions">(Vous voyez un nom famillier? Cocher sa case et entrer votre type de relation.)</p></br>
 
           <?php
@@ -146,13 +147,24 @@ $personnes = $appliBD->selectAllPersonnes();
 
           foreach ($personnes as $persone) {
 
-            echo "<input id='checkbox" . "$iC+1' type='checkbox' name='contacts[]' value=" . $persone->ID . " onclick=toggleRequired(" . $persone->ID . ")><label for='checkbox" . "$iC+1'>" . $persone->Prenom . " " . $persone->Nom . ":&nbsp;&nbsp;<input id='relation" . $persone->ID . "' type='text' name='typeRelation[".$persone->ID."]'></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+            echo "<input id='checkbox" . "$iC+1' type='checkbox' name='contacts[]' value=" . $persone->ID . " onclick=toggleRequired(" . $persone->ID . ")><label for='checkbox" . "$iC+1'>" . $persone->Prenom . " " . $persone->Nom . ":&nbsp;&nbsp;<input id='relation'" . $persone->ID . "' type='text' name='typeRelation[".$persone->ID."]'></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 
             $iC++;
 
             if ($iC % 2 == 0) {
 
               echo "</br></br>";
+
+            }
+//Force plus d'espace sur certaines longeur de noms pour un affichage plus propre.
+            if (strlen($persone->Nom) + strlen($persone->Prenom) === 7) {
+
+              echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+
+            }
+            elseif (strlen($persone->Nom) + strlen($persone->Prenom) === 12) {
+
+              echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
 
             }
           }

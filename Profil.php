@@ -65,7 +65,7 @@ $relations = $appliBD->getRelationPersonne($id);
 
 			<?php
 
-			echo "<img src='$personne->URL_Photo'>";
+			echo "<img id='foo' src='$personne->URL_Photo' onerror='standby()'>";
 
 			echo "<p>" . $personne->Prenom . " " . $personne->Nom . "</p>";
 
@@ -101,27 +101,26 @@ $relations = $appliBD->getRelationPersonne($id);
 	<div class="cont">
 		<h2 class="contacts">Contacts</h2>
 		<div class="ls_ct">
-			<table>
-				<td>
-					<?php
+			<?php
 
-					echo "<tr>";
-					echo "<ul>";
+			foreach ($relations as $personne) {
 
-					foreach ($relations as $personne) {
+			echo "<a href='Profil.php?id=$personne->ID'>" . $personne->Prenom . " " . $personne->Nom . " " . $personne->Type ."</a>";
 
-					echo "<li><a href='Profil.php?id=$personne->ID'>" . $personne->Prenom . " " . $personne->Nom . " " . $personne->Type ."</a></li>";
+			}
 
-					}
-
-					echo "</ul>";
-					echo "</tr>";
-
-					?>
-				</td>
-	  		</table>
+			?>
 	  	</div>
 	</div>
+	<script type="text/javascript">
+
+		function standby() {
+    		document.getElementById('foo').src = 'default.jpg'
+
+		}
+
+	</script>
+
 
 </body>
 </html>
