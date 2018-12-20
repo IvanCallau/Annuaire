@@ -31,16 +31,18 @@ $personnes = $appliBD->selectPersonneByNomPrenomLike("%%");
 		</form>
 	</div>
 
-	<div class="search">
-			Recherche:
+	<form method="GET" action="Recherche.php">
+		<div class="search">
+				Recherche:
 
-			<?php
+				<?php
 
-			echo "<input id='search' type='search' name='Recherche' placeholder='Recherche'>";
-			//echo "<input id='search' type='button' name='Recherche' value='🔍'>"
+				echo "<input id='search' type='search' name='Recherche' placeholder='Recherche'>";
+				echo "<input id='search' type='button' name='Recherche' value='🔍'>"
 
-			?>
-	</div>
+				?>
+		</div>
+	</form>
 
 	<div class="list">
 		<?php
