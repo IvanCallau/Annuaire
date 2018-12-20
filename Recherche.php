@@ -43,63 +43,25 @@ $personnes = $appliBD->selectPersonneByNomPrenomLike("%%");
 	</div>
 
 	<div class="list">
-		<table>
-			<tr style="list-style-type:disc">
-				<?php
+		<?php
 
-				echo "<td>";
-				echo "<ul>";
+		$iP = 0;
 
-				foreach ($personnes as $personne) {
+		foreach ($personnes as $persone) {
 
-				echo "<li><a href='Profil.php?id=$personne->ID'>" . $personne->Prenom . " " . $personne->Nom . "</a></li>";
+		echo "<a href='Profil.php?id=$persone->ID'>" . $persone->Prenom . " " . $persone->Nom . "</a>&nbsp;&nbsp;&nbsp;&nbsp;";
 
-				}
+		$iP++;
 
-				echo "</ul>";
-				echo "</td>";
+			if ($iP % 4 == 0) {
 
+				echo "<br>";
 
-				echo "<td>";
-				echo "<ul>";
+			}
 
-				foreach ($personnes as $personne) {
+		}
 
-				echo "<li><a href='Profil.php?id=$personne->ID'>" . $personne->Prenom . " " . $personne->Nom . "</a></li>";
-
-				}
-
-				echo "</ul>";
-				echo "</td>";
-
-
-				echo "<td>";
-				echo "<ul>";
-
-				foreach ($personnes as $personne) {
-
-				echo "<li><a href='Profil.php?id=$personne->ID'>" . $personne->Prenom . " " . $personne->Nom . "</a></li>";
-
-				}
-
-				echo "</ul>";
-				echo "</td>";
-
-
-				echo "<td>";
-				echo "<ul>";
-
-				foreach ($personnes as $personne) {
-
-				echo "<li><a href='Profil.php?id=$personne->ID'>" . $personne->Prenom . " " . $personne->Nom . "</a></li>";
-
-				}
-
-				echo "</ul>";
-				echo "</td>";
-				?>
-			</tr>
-		</table>
+		?>
 	</div>
 </body>
 </html>
