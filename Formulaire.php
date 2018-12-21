@@ -4,6 +4,7 @@ require "connexion.php";
 
 $appliBD = new Connexion();
 
+// Prend toute les information de chaque tableau: Musique, Hobby et Personnes.
 $musiques = $appliBD->selectAllMusique2();
 $hobbies = $appliBD->selectAllHobbies2();
 $personnes = $appliBD->selectAllPersonnes();
@@ -96,6 +97,7 @@ $personnes = $appliBD->selectAllPersonnes();
 
         $iM = 0;
 
+        // Affiche toutes les musiques, 6 par ligne.
         foreach ($musiques as $m) {
 
           echo "<input id='checkbox" . "$iM+1' type='checkbox' name='musiques[]' value=" . $m->ID . "><label for='checkbox" . "$iM+1'>" . $m->Type . ".</label>&nbsp;&nbsp;&nbsp;";
@@ -121,6 +123,7 @@ $personnes = $appliBD->selectAllPersonnes();
 
         $iH = 500;
 
+        // Affiche tout les hobbies, 5 par ligne.
         foreach ($hobbies as $hobby) {
 
           echo "<input id='checkbox" . "$iH+1' type='checkbox' name='hobbies[]' value=" . $hobby->ID . "><label for='checkbox" . "$iH+1'>" . $hobby->Type . ".</label>&nbsp;&nbsp;&nbsp;";
@@ -146,6 +149,7 @@ $personnes = $appliBD->selectAllPersonnes();
 
           $iC = 2000;
 
+          // Affiche toutes les personnes  sur 2 colonnes, ainsi qu'une barre pour taper le type de relation SI la case à été coché.
           foreach ($personnes as $persone) {
 
             echo "<input id='checkbox" . "$iC+1' type='checkbox' name='contacts[]' value=" . $persone->ID . " onclick=toggleRequired(" . $persone->ID . ")><label for='checkbox" . "$iC+1'>" . $persone->Prenom . " " . $persone->Nom . ":&nbsp;&nbsp;<input id='relation'" . $persone->ID . "' type='text' name='typeRelation[".$persone->ID."]'></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -157,7 +161,8 @@ $personnes = $appliBD->selectAllPersonnes();
               echo "</br></br>";
 
             }
-//Force plus d'espace sur certaines longeur de noms pour un affichage plus propre.
+
+            //Force plus d'espace sur certaines longeur de noms pour un affichage plus propre.
             if (strlen($persone->Nom) + strlen($persone->Prenom) === 7) {
 
               echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -180,6 +185,7 @@ $personnes = $appliBD->selectAllPersonnes();
     </form>
   </div>
 
+  <!-- Fonction qui rend les barres sous les personnes de devenir "required" si la case à coté du nom à été cochée ET enlève le required si la case est décochée. -->
   <script type="text/javascript">
     
     function toggleRequired(personeId) {

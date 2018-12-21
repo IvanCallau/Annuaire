@@ -4,6 +4,7 @@ require "connexion.php";
 
 $appliBD = new Connexion();
 
+// Donne sa valeur $ $id selon la valeur envoyé sur ?id="" dans le lien ET permet au reste des $appliBD de fonctionner.
 $id = $_GET["id"];
 
 $personneMusique = $appliBD->getPersonneMusique($id);
@@ -45,6 +46,7 @@ $relations = $appliBD->getRelationPersonne($id);
 
 				echo "<ul class='espace'>";
 
+				// Affiche les musique que la personne à séléctionné dans la base de donnée et qui se trouvent dans RelationMusique.
 				foreach ($personneMusique as $pMusiques) {
 
 					echo "<li>" . $pMusiques->Type . "</li>";
@@ -61,6 +63,7 @@ $relations = $appliBD->getRelationPersonne($id);
 
 			<?php
 
+			// Prend les informations dans la Table Personne selon l'ID.
 			echo "<img id='foo' src='$personne->URL_Photo' onerror='standby()'>";
 
 			echo "<p>" . $personne->Prenom . " " . $personne->Nom . "</p>";
@@ -80,6 +83,7 @@ $relations = $appliBD->getRelationPersonne($id);
 
 				echo "<ul class='espace'>";
 
+				// Affiche les hobbies comme pour musiques.
 				foreach ($pHobbies as $pHobby) {
 
 					echo "<li>" . $pHobby->Type . "</li>";
@@ -101,6 +105,7 @@ $relations = $appliBD->getRelationPersonne($id);
 
 			$iP = 0;
 
+			// Même principe que le reste, prend les valeurs du tableau RelationPersonne selon l'ID du propriétaire du Profil et affiche le Nom/Prénom et le type de relation entre les 2.
 			foreach ($relations as $personne) {
 
 				echo "<a href='Profil.php?id=$personne->ID'>" . $personne->Prenom . " " . $personne->Nom ."&nbsp;/&nbsp;" . $personne->Type ."</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -118,6 +123,8 @@ $relations = $appliBD->getRelationPersonne($id);
 			?>
 	  	</div>
 	</div>
+
+	<!-- Function qui permet de mettre un Image par defaut dans les cas oú la photo ne s'afficherai pas -->
 	<script type="text/javascript">
 
 		function standby() {
