@@ -6,8 +6,12 @@ $appliBD = new Connexion();
 
 $pattern = "";
 
-$personnes = $appliBD->selectPersonneByNomPrenomLike("%%");
-$recherche = $appliBD->selectPersonneByNomPrenomLike("GET");
+if ($_GET["Recherche"] != NULL) {
+	// stocker la valeur
+	$pattern = $_GET["Recherche"];
+}
+
+$personnes = $appliBD->selectPersonneByNomPrenomLike($pattern);
 
 ?>
 
@@ -41,12 +45,7 @@ $recherche = $appliBD->selectPersonneByNomPrenomLike("GET");
 				<?php
 
 				echo "<input id='search' type='search' name='Recherche' placeholder='Recherche'>";
-				echo "<input id='search' type='button' name='Recherche' value='🔍'>"
-
-				if ($_GET["Recherche"] != NULL) {
-					// stocker la valeur
-					$pattern = $personnes;
-				}
+				echo "<input id='search' type='submit' value='🔍'>"
 
 				?>
 		</div>
@@ -57,9 +56,9 @@ $recherche = $appliBD->selectPersonneByNomPrenomLike("GET");
 
 		$iP = 0;
 
-		foreach ($personnes as $persone) {
+		foreach ($personnes as $personne) {
 
-		echo "<a href='Profil.php?id=$persone->ID'>" . $persone->Prenom . " " . $persone->Nom . "</a>&nbsp;&nbsp;&nbsp;&nbsp;";
+		echo "<a href='Profil.php?id=$personne->ID'>" . $personne->Prenom . " " . $personne->Nom . "</a>&nbsp;&nbsp;&nbsp;&nbsp;";
 
 		$iP++;
 
