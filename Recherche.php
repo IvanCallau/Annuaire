@@ -41,13 +41,8 @@ $personnes = $appliBD->selectPersonneByNomPrenomLike($pattern);
 	<form method="GET" action="Recherche.php">
 		<div class="search">
 				Recherche:
-
-				<?php
-
-				echo "<input id='search' type='search' name='Recherche' placeholder='Recherche'>";
-				echo "<input id='search' type='submit' value='🔍'>"
-
-				?>
+			<input id='search' type='search' name='Recherche' placeholder='Recherche'>
+			<input id='search' type='submit' value='🔍'>
 		</div>
 	</form>
 
