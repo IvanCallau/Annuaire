@@ -29,11 +29,6 @@ $relations = $appliBD->getRelationPersonne($id);
 </head>
 <body>
 
-	<div class="profil_recherche">
-		Recherche:
-		<input id="search" type="text" name="Recherche" placeholder="Recherche">
-	</div>
-
 	<div id="title_invisible">
 		<form method="GET" action="Index.php">
 			<input id="title" type="submit" value="VisageLibraire">
