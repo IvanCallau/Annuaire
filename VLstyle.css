@@ -38,14 +38,11 @@ label {
 #title_invisible {
 	width:auto;
 	margin:auto;
-	text-align:center;
 }
 
 #title {
-	width:auto;
 	margin:auto;
 	padding:56px 50px;
-	text-align:center;
 	background-color:#F0E68C;
 	border-radius:20px;
 	border:solid 5px #FFBF00;
@@ -55,6 +52,12 @@ label {
 	color:#FF8C00;
 	font-family: 'Comfortaa', cursive;
 	text-shadow: 3px 2px 3px #202020;
+}
+
+#center_title {
+	width:945px;
+	margin:auto;
+	text-align:center;
 }
 
 #formulaire {

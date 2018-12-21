@@ -27,11 +27,12 @@ $personnes = $appliBD->selectAllPersonnes();
 </head>
 
 <body>
-
-<div id="title_invisible">
-    <form method="POST" action="Index.php">
-      <input id="title" type="submit" value="VisageLibraire">
-    </form>
+  <div id="center_title">
+    <div id="title_invisible">
+      <form method="POST" action="Index.php">
+        <input id="title" type="submit" value="VisageLibraire">
+      </form>
+    </div>
   </div>
 
   <div id="formulaire">

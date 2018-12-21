@@ -6,7 +6,7 @@ $appliBD = new Connexion();
 
 $pattern = "";
 
-if ($_GET["Recherche"] != NULL) {
+if (isset($_GET['Recherche'])) {
 	// stocker la valeur
 	$pattern = $_GET["Recherche"];
 }
@@ -31,20 +31,21 @@ $personnes = $appliBD->selectPersonneByNomPrenomLike($pattern);
 
 
 <body>
+	<div id="center_title">
+		<div id="title_invisible">
+			<form method="GET" action="Index.php">
+				<input id="title" type="submit" value="VisageLibraire">
+			</form>
+		</div>
 
-	<div id="title_invisible">
-		<form method="GET" action="Index.php">
-			<input id="title" type="submit" value="VisageLibraire">
+		<form method="GET" action="Recherche.php">
+			<div class="search">
+					Recherche:
+				<input id='search' type='search' name='Recherche' placeholder='Recherche'>
+				<input id='search' type='submit' value='🔍'>
+			</div>
 		</form>
 	</div>
-
-	<form method="GET" action="Recherche.php">
-		<div class="search">
-				Recherche:
-			<input id='search' type='search' name='Recherche' placeholder='Recherche'>
-			<input id='search' type='submit' value='🔍'>
-		</div>
-	</form>
 
 	<div class="list">
 		<?php
