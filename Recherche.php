@@ -4,7 +4,10 @@ require "connexion.php";
 
 $appliBD = new Connexion();
 
+$pattern = "";
+
 $personnes = $appliBD->selectPersonneByNomPrenomLike("%%");
+$recherche = $appliBD->selectPersonneByNomPrenomLike("GET");
 
 ?>
 
@@ -39,6 +42,11 @@ $personnes = $appliBD->selectPersonneByNomPrenomLike("%%");
 
 				echo "<input id='search' type='search' name='Recherche' placeholder='Recherche'>";
 				echo "<input id='search' type='button' name='Recherche' value='🔍'>"
+
+				if ($_GET["Recherche"] != NULL) {
+					// stocker la valeur
+					$pattern = $personnes;
+				}
 
 				?>
 		</div>
