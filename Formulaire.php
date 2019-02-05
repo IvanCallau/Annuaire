@@ -149,7 +149,7 @@ $personnes = $appliBD->selectAllPersonnes();
 
           $iC = 2000;
 
-          // Affiche toutes les personnes  sur 2 colonnes, ainsi qu'une barre pour taper le type de relation SI la case à été coché.
+          // Affiche toutes les personnes  sur 2 colonnes, ainsi qu'une barre pour taper le type de relation SI la case à été cochée.
           foreach ($personnes as $persone) {
 
             echo "<input id='checkbox" . "$iC+1' type='checkbox' name='contacts[]' value=" . $persone->ID . " onclick=toggleRequired(" . $persone->ID . ")><label for='checkbox" . "$iC+1'>" . $persone->Prenom . " " . $persone->Nom . ":&nbsp;&nbsp;<input id='relation'" . $persone->ID . "' type='text' name='typeRelation[".$persone->ID."]'></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -162,7 +162,7 @@ $personnes = $appliBD->selectAllPersonnes();
 
             }
 
-            //Force plus d'espace sur certaines longeur de noms pour un affichage plus propre.
+            //Force plus d'espace sur certaines longueurs de noms pour un affichage plus propre.
             if (strlen($persone->Nom) + strlen($persone->Prenom) === 7) {
 
               echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -185,7 +185,7 @@ $personnes = $appliBD->selectAllPersonnes();
     </form>
   </div>
 
-  <!-- Fonction qui rend les barres sous les personnes de devenir "required" si la case à coté du nom à été cochée ET enlève le required si la case est décochée. -->
+  <!-- Fonction qui transforme les barres sous les personnes en "required" si la case à coté du nom à été cochée ET enlève le required si la case est décochée. -->
   <script type="text/javascript">
     
     function toggleRequired(personeId) {

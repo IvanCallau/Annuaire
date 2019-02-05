@@ -7,13 +7,13 @@ $appliBD = new Connexion();
 // Met la valeur de $pattern à rien.
 $pattern = "";
 
-// Empèche le navigateur d'afficher une erreur tout en incluant les 2 possibilitées: NULL et TRUE.
+// Empêche le navigateur d'afficher une erreur tout en incluant les 2 possibilitées: NULL et TRUE.
 if (isset($_GET['Recherche'])) {
 	// stocker la valeur
 	$pattern = $_GET["Recherche"];
 }
 
-// La valeur donnée dans la barre de recherche est insérée dans le lein et permet de faire une recherche.
+// La valeur donnée dans la barre de recherche est insérée dans le lien et permet de faire une recherche.
 $personnes = $appliBD->selectPersonneByNomPrenomLike($pattern);
 
 ?>
@@ -55,7 +55,7 @@ $personnes = $appliBD->selectPersonneByNomPrenomLike($pattern);
 
 		$iP = 0;
 
-		// Affiche le Nom/Prénom de toutes les Personnes dans la base de donnée et si une recherche est faite, modifie les résultat celon les inputs.
+		// Affiche le Nom/Prénom de toutes les Personnes dans la base de données et si une recherche est faite, modifie les résultats selon les inputs.
 		foreach ($personnes as $personne) {
 
 		echo "<a href='Profil.php?id=$personne->ID'>" . $personne->Prenom . " " . $personne->Nom . "</a>&nbsp;&nbsp;&nbsp;&nbsp;";

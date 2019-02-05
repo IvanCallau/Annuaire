@@ -4,7 +4,7 @@ require "connexion.php";
 
 $appliBD = new Connexion();
 
-// Donne sa valeur $ $id selon la valeur envoyé sur ?id="" dans le lien ET permet au reste des $appliBD de fonctionner.
+// Donne sa valeur $id selon la valeur envoyée sur %?id="$id" dans le lien ET permet au reste des $appliBD de fonctionner.
 $id = $_GET["id"];
 
 $personneMusique = $appliBD->getPersonneMusique($id);
@@ -46,7 +46,7 @@ $relations = $appliBD->getRelationPersonne($id);
 
 				echo "<ul class='espace'>";
 
-				// Affiche les musique que la personne à séléctionné dans la base de donnée et qui se trouvent dans RelationMusique.
+				// Affiche les musiques que la personne a séléctionné dans la base de données et qui se trouvent dans RelationMusique.
 				foreach ($personneMusique as $pMusiques) {
 
 					echo "<li>" . $pMusiques->Type . "</li>";
@@ -63,7 +63,7 @@ $relations = $appliBD->getRelationPersonne($id);
 
 			<?php
 
-			// Prend les informations dans la Table Personne selon l'ID.
+			// Prend les informations dans la table Personne selon l'ID.
 			echo "<img id='foo' src='$personne->URL_Photo' onerror='standby()'>";
 
 			echo "<p>" . $personne->Prenom . " " . $personne->Nom . "</p>";
@@ -124,7 +124,7 @@ $relations = $appliBD->getRelationPersonne($id);
 	  	</div>
 	</div>
 
-	<!-- Function qui permet de mettre un Image par defaut dans les cas oú la photo ne s'afficherai pas -->
+	<!-- Fonction qui permet de mettre une image par défaut dans les cas où la photo ne s'afficherait pas. -->
 	<script type="text/javascript">
 
 		function standby() {

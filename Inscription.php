@@ -4,7 +4,7 @@ require "connexion.php";
 
 $appliBD = new Connexion();
 
-// Récupère les donnée insérées dan Formulaire.php selon leurs "name".
+// Récupère les données insérées dans Formulaire.php selon leurs "name".
 $lastname = $_POST["lastname"];
 $firstname =  $_POST["firstname"];
 $photo = $_POST["photo_URL"];
@@ -21,7 +21,7 @@ echo "$lastname </br> $firstname </br> $photo </br> $anniversaire </br> $status"
 // Crée le nouvel utilisateur dans le tableau Personne et récupère son ID.
 $nouvelId = $appliBD->insertPersonne($lastname, $firstname, $photo, $anniversaire, $status);
 
-// Fais des insertions dans le tableau RelationMusique pour chaque valeur séléctionnée dans "musiques".
+// Fait des insertions dans le tableau RelationMusique pour chaque valeur séléctionnée dans "musiques".
 foreach ($musiques as $musique) {
 
 	// Insère 1 à 1 les relations.
@@ -29,7 +29,7 @@ foreach ($musiques as $musique) {
 
 }
 
-// Fais des insertions dans le tableau RelationHobby pour chaque valeur séléctionnée dans "hobbies".
+// Fait des insertions dans le tableau RelationHobby pour chaque valeur séléctionnée dans "hobbies".
 foreach ($hobbies as $hobby) {
 
 	// Insère 1 à 1 les relations.
@@ -37,7 +37,7 @@ foreach ($hobbies as $hobby) {
 
 }
 
-// Fais des insertions dans le tableau RelationPersonne pour chaque personne séléctionnée dans "contacts" ainsi que le type qui à été écris dans la barre.
+// Fais des insertions dans le tableau RelationPersonne pour chaque personne séléctionnée dans "contacts" ainsi que le type qui a été écrit dans la barre.
 foreach ($relationType as $personeId => $personeRelation) {
 
 	// Insère 1 à 1 les relations SI il y en a.
